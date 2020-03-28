@@ -6,6 +6,7 @@ ruby '2.6.3'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.2'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'bootsnap', '>= 1.4.2', require: false
+gem "algoliasearch-rails"
 
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
