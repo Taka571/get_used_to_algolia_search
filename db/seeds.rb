@@ -5,3 +5,11 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+200.times do |i|
+  Product.create!(
+    name: "TEST_#{i}",
+    price: rand(4000..10000).round(-2),
+    searchable: true,
+  )
+end
