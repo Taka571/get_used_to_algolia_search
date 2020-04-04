@@ -1,26 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import algoliasearch from 'algoliasearch/lite';
+import { InstantSearch, SearchBox, Hits } from 'react-instantsearch-dom';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const searchClient = algoliasearch(
+  process.env.ALGOLIA_APPLICATION_ID,
+  process.env.ALGOLIA_API_KEY
+);
+
+const App = () => (
+  <InstantSearch
+    indexName="Product_development"
+    searchClient={searchClient}
+  >
+    <SearchBox />
+    <Hits />
+  </InstantSearch>
+);
 
 export default App;
